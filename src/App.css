@@ -90,11 +90,10 @@ h5 {
 }
 
 .modal-content {
-  background-color: #FFF;
+  background-color: rgba(256, 256, 256, 0.8);
   width: 500px;
   height: 300px;
   z-index: 1002;
-  opacity: 1;
   border: 2px solid purple;
   position: relative;
   text-align: center;

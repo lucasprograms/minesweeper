@@ -9,10 +9,6 @@ export default class Modal extends Component {
     }
   }
 
-  handlePlayAgainClick (restartGame) {
-    restartGame()
-  }
-
   getModalContent (outcome) {
     if (outcome === 'victory') {
       return 'SWEET VICTORY!'
@@ -25,7 +21,7 @@ export default class Modal extends Component {
     return (
       <div className={`modal ${this.props.gameOutcome === 'undecided' ? 'hide' : 'show'}`}>
         <div className="modal-content">
-          <button onClick={() => this.handlePlayAgainClick(this.props.restartGame)} id="play-again" className="modal-play-again-button">Play Again</button>
+          <button onClick={this.props.restartGame} id="play-again" className="modal-play-again-button">Play Again</button>
           <div className="modal-content-text">{this.getModalContent(this.props.gameOutcome)}</div>
         </div>
       </div>
