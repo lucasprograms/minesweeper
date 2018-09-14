@@ -7,7 +7,7 @@ export default class Game extends Component {
   constructor (props) {  
     super(props)  
     
-    const board = new Minesweeper.Board(20, 50)
+    const board = new Minesweeper.Board(9, 10)
     this.state = {
       board: board,
       gameOutcome: 'undecided'
