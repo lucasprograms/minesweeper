@@ -1,0 +1,127 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* end reset */
+
+h3 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.game {
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.board-row {
+  border: 1px solid black;
+  border-bottom: none;
+  display: flex;
+}
+
+.board-row:last-child {
+  border-bottom: 1px solid black;
+}
+
+.tile {
+  border-right: 1px solid black;
+  text-align: center;
+}
+
+.tile:last-child {
+  border-right: none;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128,128,128,0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hide {
+  display: none;
+}
+
+.modal.show {
+  display: flex
+}
+
+.modal-content {
+  background-color: #FFF;
+  width: 500px;
+  height: 300px;
+  z-index: 1002;
+  opacity: 1;
+  border: 2px solid purple;
+  position: relative;
+  text-align: center;
+}
+
+.modal-play-again-button {
+  padding: 5px 10px;
+  border: 2px solid purple;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.modal-play-again-button:hover {
+  background-color: #CCC;
+  cursor: pointer;
+  align-self: baseline;
+}
+
+.modal-content-text {
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
