@@ -7,7 +7,7 @@ export default class Game extends Component {
   constructor (props) {  
     super(props)  
     
-    const board = new Minesweeper.Board(9, 10)
+    const board = new Minesweeper.Board(20, 50)
     this.state = {
       board: board,
       gameOutcome: 'undecided'
@@ -37,9 +37,25 @@ export default class Game extends Component {
     })
   }
 
-  restartGame () {
+  restartGame (size) {
+    let board
+
+    switch (size) {
+      case 'small':
+        board = new Minesweeper.Board(9, 10)
+        break
+      case 'medium':
+        board = new Minesweeper.Board(15, 30)
+        break
+      case 'large':
+        board = new Minesweeper.Board(20, 50)
+        break
+      default:
+        board = new Minesweeper.Board(9, 10)
+    }
+
     this.setState({
-      board: new Minesweeper.Board(9, 10),
+      board,
       gameOutcome: 'undecided'
     })
   }

@@ -10,7 +10,7 @@ export default class Tile extends Component {
     } else if (flagged) {
       return FLAG_UNICODE
     } else if (explored) {
-      return bombCount
+      return bombCount ? bombCount : ''
     } else {
       return ''
     }
@@ -25,7 +25,7 @@ export default class Tile extends Component {
     const fontSize = this.props.tileWidth - 5 + 'px'
     return (
       <div
-        className="tile"
+        className={`tile ${this.props.tile.explored ? 'revealed' : ''}`}
         style={{width: tileDimension, height: tileDimension, fontSize}}
         onClick={(e) => this.handleClick(e.altKey, this.props.updateGame, this.props.tile)}
       >
